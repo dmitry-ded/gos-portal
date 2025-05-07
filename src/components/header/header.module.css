@@ -1,0 +1,40 @@
+.mainHeaderBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 74px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px 0px #00000086;
+}
+
+.contentSection {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.navBlock {
+  display: flex;
+  align-items: center;
+
+}
+
+.navigationUl {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  li {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #143261;
+    cursor: pointer;
+  }
+
+  li:hover {
+    text-decoration: underline;
+  }
+}

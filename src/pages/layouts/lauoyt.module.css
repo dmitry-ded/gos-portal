@@ -1,0 +1,12 @@
+.mainHomeBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerBlock {
+  display:  flex;
+}
+
+.childrenBlock {
+  display:  flex;
+}

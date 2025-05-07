@@ -1,0 +1,85 @@
+.mainHomeBlock {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 5rem;
+}
+
+.bodyHomeBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 95%;
+
+  button {
+    border-radius: 8px;
+    width: 490px;
+    height: 40px;
+    background: #143261;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s ease; 
+  }
+
+    button:active {
+      transform: scale(1);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); 
+    }
+
+    button:hover {
+      background: #25539c;
+      transform: scale(1.01);
+    }
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  h3 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+  }
+
+  input {
+    border-radius: 8px;
+    padding: .6rem .6rem .6rem 1rem;
+    background: #bebebe;
+    width: 45%;
+  }
+
+  input::placeholder {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+  }
+
+  select {
+    border-radius: 8px;
+    padding: .6rem .6rem .6rem 1rem; 
+    background: #bebebe;
+    width: 45%;
+    appearance: none; 
+    background-image: url('../../assets/down.svg');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    cursor: pointer; 
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: #999;
+  }
+}
