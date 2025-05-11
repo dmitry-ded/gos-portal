@@ -2,17 +2,12 @@ import React from 'react'
 import styles from "./header.module.css"
 import logo from "../../assets/logo2.svg"
 import { Link, useNavigate } from 'react-router-dom'
-import { useAppDispatch } from '../../redux/store'
-import { removeUser } from '../../redux/slices/userSlice'
-
 
 const HeaderGuide: React.FC = () => {
 
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
 
   const handleLogout = () => {
-      dispatch(removeUser());
       navigate("/login");
     }
 

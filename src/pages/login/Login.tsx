@@ -2,24 +2,32 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from "./login.module.css"
 import logo2 from "../../assets/logo2.svg"
-import { useAppDispatch } from '../../redux/store'
-import { setUser } from '../../redux/slices/userSlice'
+import { selectUser } from '../../redux/slices/userSlice'
+import { useSelector } from 'react-redux'
 
 const Login: React.FC = () => {
 
+  const { email, pass } = useSelector(selectUser);
 
-  const dispatch = useAppDispatch();
+  console.log(email);
+  console.log(pass);
+
 
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [passInput, setPassInput] = useState("");
 
-  const isValidForm = email.trim() !== "" && pass.trim() !== "";
+  console.log(emailInput);
+  console.log(passInput);
+  
+
+  const isValidForm = emailInput.trim() !== "" && passInput.trim() !== "";
 
   const handleLogin = () => {
-    dispatch(setUser({email, pass}));
-    navigate("/guide")
+    if(emailInput === email && pass === passInput) {
+      navigate("/guide");
+    }
   }
 
   return (
@@ -35,8 +43,8 @@ const Login: React.FC = () => {
           <div className={styles.authBlock}>
             <p>Вход</p>
             <div className={styles.authContent}>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder='Логин'/>
-              <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder='Пароль '/>
+              <input value={emailInput} onChange={(e) => setEmailInput(e.target.value)} type="text" placeholder='Логин'/>
+              <input value={passInput} onChange={(e) => setPassInput(e.target.value)} type="password" placeholder='Пароль '/>
               <button onClick={handleLogin} disabled={!isValidForm}>Войти</button>
             </div>
           </div>
